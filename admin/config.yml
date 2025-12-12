@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "site-simple/images/produits"
+public_folder: "images/produits"
+
+collections:
+  - name: "produits"
+    label: "Produits"
+    folder: "site-simple/_produits"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du produit", name: "nom", widget: "string"}
+      - {label: "Prix (€)", name: "prix", widget: "number", value_type: "float", min: 0, step: 0.10}
+      - {label: "Stock", name: "stock", widget: "number", value_type: "int", min: 0}
+      - label: "Catégorie"
+        name: "categorie"
+        widget: "select"
+        options:
+          - {label: "Rosa Néotéra", value: "rosa_neotera"}
+          - {label: "Contre Culture", value: "contre_culture"}
+      - label: "Collection"
+        name: "collection"
+        widget: "select"
+        options:
+          - {label: "Jaune", value: "jaune"}
+          - {label: "Bleue", value: "bleue"}
+          - {label: "Rouge", value: "rouge"}
+          - {label: "Vert", value: "vert"}
+          - {label: "Beige", value: "beige"}
+          - {label: "Orange", value: "orange"}
+          - {label: "Rose", value: "rose"}
+          - {label: "Noir et Gris", value: "noir-gris"}
+          - {label: "Classique", value: "classique"}
+          - {label: "Cabochons", value: "cabochons"}
+          - {label: "Bohème", value: "boheme"}
+          - {label: "Comic's Pop Art", value: "comics"}
+          - {label: "Gothique", value: "gothique"}
+          - {label: "Hippie Années 60", value: "hippie"}
+          - {label: "Rock", value: "rock"}
+          - {label: "Vintage", value: "vintage"}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Caractéristiques"
+        name: "caracteristiques"
+        widget: "list"
+        field: {label: "Caractéristique", name: "item", widget: "string"}
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        field: {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Vidéo (optionnel)", name: "video", widget: "file", required: false}
+      - {label: "Nouveauté", name: "nouveaute", widget: "boolean", default: false}
+      - {label: "Promotion", name: "promotion", widget: "boolean", default: false}

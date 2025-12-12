@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit - Rosa Néotéra</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #333; }
+        .header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1.5rem 2rem; }
+        .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #78350f; text-decoration: none; }
+        .logo span { display: block; font-size: 0.875rem; color: #666; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #374151; text-decoration: none; font-weight: 500; }
+        
+        .container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
+        .back-link { color: #d97706; text-decoration: none; margin-bottom: 2rem; display: inline-block; }
+        
+        .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        
+        .gallery { display: flex; flex-direction: column; gap: 1rem; }
+        .main-image { width: 100%; aspect-ratio: 1; background: #f3f4f6; border-radius: 1rem; overflow: hidden; }
+        .main-image img { width: 100%; height: 100%; object-fit: cover; }
+        .thumbnails { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+        .thumbnail { aspect-ratio: 1; background: #f3f4f6; border-radius: 0.5rem; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border 0.3s; }
+        .thumbnail:hover, .thumbnail.active { border-color: #d97706; }
+        .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .video-container { margin-top: 1rem; }
+        .video-container video { width: 100%; border-radius: 1rem; }
+        
+        .product-info { }
+        .badges { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .badge { padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; }
+        .badge-new { background: #d1fae5; color: #065f46; }
+        .badge-promo { background: #fee2e2; color: #991b1b; }
+        
+        .product-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
+        .product-collection { color: #6b7280; font-size: 1.125rem; margin-bottom: 1.5rem; }
+        
+        .price-section { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
+        .price { font-size: 2.5rem; font-weight: 700; color: #d97706; }
+        .stock-badge { padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; }
+        .stock-available { background: #d1fae5; color: #065f46; }
+        .stock-low { background: #fed7aa; color: #9a3412; }
+        
+        .description { font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 2rem; }
+        
+        .characteristics { background: #f9fafb; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; }
+        .characteristics h3 { font-size: 1.25rem; color: #1f2937; margin-bottom: 1rem; }
+        .characteristics ul { list-style: none; }
+        .characteristics li { padding: 0.5rem 0; color: #4b5563; }
+        .characteristics li:before { content: "✓ "; color: #10b981; font-weight: 700; margin-right: 0.5rem; }
+        
+        .cta-section { display: flex; gap: 1rem; }
+        .btn { padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; font-size: 1rem; border: none; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; text-align: center; }
+        .btn-primary { background: #d97706; color: white; flex: 1; }
+        .btn-primary:hover { background: #b45309; }
+        .btn-secondary { background: white; color: #d97706; border: 2px solid #d97706; }
+        .btn-secondary:hover { background: #fef3c7; }
+        
+        .footer { background: #78350f; color: white; padding: 2rem; text-align: center; margin-top: 4rem; }
+        
+        @media (max-width: 768px) {
+            .product-detail { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Rosa Néotéra<span>Contre Culture</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="produits.html" class="back-link">← Retour aux produits</a>
+        
+        <div id="product-detail" class="product-detail">
+            <!-- Contenu généré par JavaScript -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Rosa Néotéra - Contre Culture</p>
+    </footer>
+
+    <script src="produits-data.js"></script>
+    <script>
+        // Récupérer l'ID du produit depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+        
+        // Trouver le produit
+        const produit = produits.find(p => p.id === productId);
+        
+        if (produit) {
+            const detailDiv = document.getElementById('product-detail');
+            
+            // Galerie d'images
+            let thumbnailsHTML = '';
+            produit.photos.forEach((photo, index) => {
+                thumbnailsHTML += `
+                    <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeMainImage('${photo}', this)">
+                        <img src="${photo}" alt="${produit.nom}" onerror="this.src='https://via.placeholder.com/150'">
+                    </div>
+                `;
+            });
+            
+            // Vidéo
+            const videoHTML = produit.video ? `
+                <div class="video-container">
+                    <video controls>
+                        <source src="${produit.video}" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+            ` : '';
+            
+            // Badges
+            const badges = [];
+            if (produit.nouveaute) badges.push('<span class="badge badge-new">Nouveau</span>');
+            if (produit.promotion) badges.push('<span class="badge badge-promo">Promotion</span>');
+            
+            // Stock
+            const stockClass = produit.stock > 5 ? 'stock-available' : 'stock-low';
+            const stockText = produit.stock > 0 ? `${produit.stock} en stock` : 'Épuisé';
+            
+            // Caractéristiques
+            const caracHTML = produit.caracteristiques.map(c => `<li>${c}</li>`).join('');
+            
+            detailDiv.innerHTML = `
+                <div class="gallery">
+                    <div class="main-image" id="main-image">
+                        <img src="${produit.photos[0]}" alt="${produit.nom}" onerror="this.src='https://via.placeholder.com/500'">
+                    </div>
+                    <div class="thumbnails">
+                        ${thumbnailsHTML}
+                    </div>
+                    ${videoHTML}
+                </div>
+                
+                <div class="product-info">
+                    <div class="badges">${badges.join('')}</div>
+                    <h1 class="product-title">${produit.nom}</h1>
+                    <p class="product-collection">Collection ${produit.collection.charAt(0).toUpperCase() + produit.collection.slice(1)}</p>
+                    
+                    <div class="price-section">
+                        <span class="price">${produit.prix.toFixed(2)} €</span>
+                        <span class="stock-badge ${stockClass}">${stockText}</span>
+                    </div>
+                    
+                    <p class="description">${produit.description}</p>
+                    
+                    <div class="characteristics">
+                        <h3>Caractéristiques</h3>
+                        <ul>${caracHTML}</ul>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <a href="https://www.etsy.com/shop/RosaNeotera" target="_blank" class="btn btn-primary">
+                            Acheter sur Etsy
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            Nous contacter
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            // Mettre à jour le titre de la page
+            document.title = `${produit.nom} - Rosa Néotéra`;
+        } else {
+            document.getElementById('product-detail').innerHTML = `
+                <p style="text-align:center; color:#666;">Produit non trouvé.</p>
+                <p style="text-align:center;"><a href="produits.html" class="back-link">Retour aux produits</a></p>
+            `;
+        }
+        
+        // Fonction pour changer l'image principale
+        function changeMainImage(photoSrc, thumbnail) {
+            document.querySelector('#main-image img').src = photoSrc;
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+    </script>
+</body>
+</html>

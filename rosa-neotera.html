@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Néotéra - Collections par Couleurs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #333; }
+        .header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1.5rem 2rem; }
+        .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #78350f; text-decoration: none; }
+        .logo span { display: block; font-size: 0.875rem; color: #666; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #d97706; }
+        .hero { background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%); padding: 4rem 2rem; }
+        .hero-content { max-width: 1200px; margin: 0 auto; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #78350f; margin-bottom: 1rem; }
+        .hero p { font-size: 1.125rem; color: #374151; max-width: 800px; }
+        .section { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #78350f; text-align: center; margin-bottom: 2rem; }
+        .collections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; }
+        .collection-card { text-align: center; text-decoration: none; color: inherit; }
+        .collection-color { aspect-ratio: 1; border-radius: 1rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s; }
+        .collection-card:hover .collection-color { transform: scale(1.05); }
+        .collection-name { font-weight: 600; color: #1f2937; }
+        .features { background: #fef3c7; padding: 4rem 2rem; margin-top: 4rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .feature { background: white; border-radius: 1rem; padding: 2rem; text-align: center; }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .feature h3 { font-size: 1.25rem; color: #1f2937; margin-bottom: 0.5rem; }
+        .feature p { color: #666; }
+        .footer { background: #78350f; color: white; padding: 2rem; text-align: center; }
+        .footer a { color: #fbbf24; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Rosa Néotéra<span>Contre Culture</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="rosa-neotera.html">Rosa Néotéra</a></li>
+                <li><a href="contre-culture.html">Contre Culture</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Rosa Néotéra</h1>
+            <p>
+                Bijoux en bois faits main, uniques et originaux. Découvrez nos créations artisanales 
+                découpées et gravées au laser, légères et élégantes. Chaque collection est organisée par couleur 
+                pour que vous trouviez facilement le bijou qui correspond à votre style.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Nos collections par couleurs</h2>
+        <div class="collections-grid">
+            <a href="produits.html?collection=jaune" class="collection-card">
+                <div class="collection-color" style="background: #FFD700;"></div>
+                <div class="collection-name">Collection Jaune</div>
+            </a>
+            <a href="produits.html?collection=bleue" class="collection-card">
+                <div class="collection-color" style="background: #4169E1;"></div>
+                <div class="collection-name">Collection Bleue</div>
+            </a>
+            <a href="produits.html?collection=rouge" class="collection-card">
+                <div class="collection-color" style="background: #DC143C;"></div>
+                <div class="collection-name">Collection Rouge</div>
+            </a>
+            <a href="produits.html?collection=vert" class="collection-card">
+                <div class="collection-color" style="background: #228B22;"></div>
+                <div class="collection-name">Collection Vert</div>
+            </a>
+            <a href="produits.html?collection=beige" class="collection-card">
+                <div class="collection-color" style="background: #D2B48C;"></div>
+                <div class="collection-name">Collection Beige</div>
+            </a>
+            <a href="produits.html?collection=orange" class="collection-card">
+                <div class="collection-color" style="background: #FF8C00;"></div>
+                <div class="collection-name">Collection Orange</div>
+            </a>
+            <a href="produits.html?collection=rose" class="collection-card">
+                <div class="collection-color" style="background: #FF69B4;"></div>
+                <div class="collection-name">Collection Rose</div>
+            </a>
+            <a href="produits.html?collection=noir-gris" class="collection-card">
+                <div class="collection-color" style="background: #696969;"></div>
+                <div class="collection-name">Collection Noir et Gris</div>
+            </a>
+            <a href="produits.html?collection=classique" class="collection-card">
+                <div class="collection-color" style="background: #8B4513;"></div>
+                <div class="collection-name">Collection Classique</div>
+            </a>
+            <a href="produits.html?collection=cabochons" class="collection-card">
+                <div class="collection-color" style="background: #DEB887;"></div>
+                <div class="collection-name">Cabochons</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section">
+            <h2 class="section-title">Pourquoi Rosa Néotéra ?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🌳</div>
+                    <h3>Bois naturel</h3>
+                    <p>Matériaux nobles et écologiques pour des bijoux durables et respectueux de l'environnement.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>Gravure laser</h3>
+                    <p>Précision extrême et détails parfaits grâce à notre technologie de gravure laser professionnelle.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Peint à la main</h3>
+                    <p>Chaque bijou est unique, peint délicatement à la main avec des finitions soignées.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Rosa Néotéra - Contre Culture. Tous droits réservés.</p>
+        <p style="margin-top: 1rem;">
+            <a href="contact.html">Contact</a> | 
+            <a href="https://www.etsy.com/shop/RosaNeotera" target="_blank">Boutique Etsy</a>
+        </p>
+    </footer>
+</body>
+</html>

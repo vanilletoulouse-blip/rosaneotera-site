@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Néotéra - Contre Culture | Bijoux Artisanaux</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #78350f;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            display: block;
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #d97706;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: #d97706;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #1f2937;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #111827;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #78350f;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #78350f;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .collections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .collection-tag {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .tag-yellow { background: #fef3c7; color: #78350f; }
+        .tag-blue { background: #dbeafe; color: #1e40af; }
+        .tag-red { background: #fee2e2; color: #991b1b; }
+        .tag-green { background: #d1fae5; color: #065f46; }
+        
+        .values {
+            background: #fef3c7;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .values .cards .card {
+            text-align: center;
+        }
+        
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            background: #78350f;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #fbbf24;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                Rosa Néotéra
+                <span>Contre Culture</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="rosa-neotera.html">Rosa Néotéra</a></li>
+                <li><a href="contre-culture.html">Contre Culture</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Rosa Néotéra - Contre Culture</h1>
+        <p>
+            Bijoux en bois faits main, uniques et originaux. Découvrez nos créations artisanales 
+            découpées et gravées au laser, légères et élégantes.
+        </p>
+        <div class="btn-group">
+            <a href="rosa-neotera.html" class="btn btn-primary">
+                Découvrir Rosa Néotéra →
+            </a>
+            <a href="contre-culture.html" class="btn btn-secondary">
+                Découvrir Contre Culture →
+            </a>
+        </div>
+    </section>
+
+    <!-- Nos univers -->
+    <section class="section">
+        <h2 class="section-title">Nos univers</h2>
+        <div class="cards">
+            <!-- Rosa Néotéra -->
+            <a href="rosa-neotera.html" class="card">
+                <h3>🌿 Rosa Néotéra</h3>
+                <p>
+                    Bijoux en bois faits main, uniques et originaux. Créations artisanales découpées 
+                    et gravées au laser, légères et élégantes. Découvrez nos collections organisées par couleurs.
+                </p>
+                <div class="collections">
+                    <span class="collection-tag tag-yellow">Jaune</span>
+                    <span class="collection-tag tag-blue">Bleue</span>
+                    <span class="collection-tag tag-red">Rouge</span>
+                    <span class="collection-tag tag-green">Vert</span>
+                    <span class="collection-tag" style="background: #f3f4f6;">+ 6 autres</span>
+                </div>
+            </a>
+
+            <!-- Contre Culture -->
+            <a href="contre-culture.html" class="card">
+                <h3>⚡ Contre Culture</h3>
+                <p>
+                    Nos créations s'adressent aux âmes libres, aux passionnés de style alternatif, 
+                    aux collectionneurs d'objets originaux, et à tous ceux qui refusent la banalité du quotidien.
+                </p>
+                <div class="collections">
+                    <span class="collection-tag" style="background: #f3e8ff; color: #6b21a8;">🌸 Bohème</span>
+                    <span class="collection-tag" style="background: #e5e7eb; color: #1f2937;">🦇 Gothique</span>
+                    <span class="collection-tag tag-red">🎸 Rock</span>
+                    <span class="collection-tag" style="background: #fed7aa; color: #9a3412;">☮️ Hippie</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Nos valeurs -->
+    <section class="values">
+        <div class="section">
+            <h2 class="section-title">Pourquoi choisir nos bijoux ?</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">❤️</div>
+                    <h3>Fait main avec amour</h3>
+                    <p>
+                        Chaque bijou est unique, créé avec passion dans notre atelier toulousain.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌳</div>
+                    <h3>Matériaux naturels</h3>
+                    <p>
+                        Bois naturel, peintures écologiques et finitions soignées pour un bijou éco-responsable.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="icon">✨</div>
+                    <h3>Design unique</h3>
+                    <p>
+                        Des créations originales qui ne ressemblent à aucune autre, gravées au laser.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Rosa Néotéra - Contre Culture. Tous droits réservés.</p>
+        <p style="margin-top: 1rem;">
+            <a href="contact.html">Contact</a> | 
+            <a href="https://www.etsy.com/shop/RosaNeotera" target="_blank">Boutique Etsy</a>
+        </p>
+    </footer>
+</body>
+</html>

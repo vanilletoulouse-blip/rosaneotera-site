@@ -1,5 +1,5 @@
 ---
-nom: Pendentif Chicana, Madone armée, femme mexicaine
+nom: "Pendentif Chicana, Madone "
 prix: 25.9
 stock: 2
 categorie: contre_culture
@@ -37,8 +37,6 @@ caracteristiques:
     objet d’art à part entière, pas un simple accessoire."
 photos:
   - images/produits/1p.jpg
-  - images/produits/3p.jpg
-  - images/produits/4.jpg
 nouveaute: true
 promotion: false
 ---

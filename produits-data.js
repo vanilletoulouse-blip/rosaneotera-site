@@ -103,6 +103,7 @@ const produits = [
     categorie: "contre_culture",
     prix: 39.90,
     stock: 2,
+            etsyLink: "https://etsy.me/4oObjZS",
     description: "Pendentif spectaculaire inspiré de l'art chicano et de la culture pop mexicaine. Madone guerrière au style street art avec pistolets, auréole dorée et look badass. Découpe laser ultra-détaillée sur bois avec peinture artisanale éclatante : bleu ciel, turquoise, rouge passion et touches dorées. Fusion parfaite entre sacré et street, douceur et puissance. Pour celles et ceux qui osent affirmer leur double nature : foi et rébellion. Pièce unique et audacieuse qui ne passe jamais inaperçue.",
     caracteristiques: [
       "Hauteur : 9cm environ (grand pendentif statement)",

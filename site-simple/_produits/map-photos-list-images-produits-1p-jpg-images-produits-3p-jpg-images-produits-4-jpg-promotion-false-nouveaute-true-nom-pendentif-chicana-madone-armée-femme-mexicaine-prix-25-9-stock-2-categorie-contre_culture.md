@@ -36,7 +36,7 @@ caracteristiques:
     tous les jours Chaque pièce est minutieusement assemblée à la main — un
     objet d’art à part entière, pas un simple accessoire."
 photos:
-  - images/produits/1p.jpg
+  - https://www.etsy.com/fr/listing/4337547085/pendentif-chicana-madone-armee-femme?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&logging_key=4bd1bb6b335b11d6627f1751fbf9c8d7bae0f916%3A4337547085
 nouveaute: true
 promotion: false
 ---
